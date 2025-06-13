@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Controle de Betoneiras</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1d4ed8" />
+  <link rel="icon" href="icon-192.png" type="image/png" />
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <div id="loginBox" role="region" aria-label="Área de Login">
+    <h1>Login</h1>
+    <label for="userSelect">Usuário</label>
+    <select id="userSelect" aria-label="Selecione o usuário">
+      <option value="Leonardo">Leonardo</option>
+      <option value="Silvia">Silvia</option>
+      <option value="Hellen">Hellen</option>
+      <option value="Antonio">Antonio</option>
+      <option value="Albert">Albert</option>
+    </select>
+
+    <label for="password">Senha</label>
+    <input type="password" id="password" aria-label="Digite a senha" autocomplete="current-password" />
+    <div id="loginError" role="alert" aria-live="assertive"></div>
+    <button id="loginBtn" onclick="login()">Entrar</button>
+  </div>
+
+  <main id="mainContent" class="hidden" tabindex="-1" aria-label="Área principal do sistema">
+    <h1>Lista de Betoneiras</h1>
+    <button onclick="logout()" class="btn-logout">Sair</button>
+
+    <div id="searchContainer">
+      <input id="searchInput" type="text" placeholder="Pesquisar por nome ou ID..." aria-label="Campo de pesquisa de betoneiras" />
+      <button id="searchButton" aria-label="Buscar betoneira">🔍</button>
+    </div>
+
+    <div id="filterButtons" role="group" aria-label="Filtros de status">
+      <button class="active" data-filter="todas" aria-pressed="true">Mostrar Todas</button>
+      <button data-filter="alugada" aria-pressed="false">Mostrar Alugadas</button>
+      <button data-filter="disponível" aria-pressed="false">Mostrar Disponíveis</button>
+      <button data-filter="manutenção" aria-pressed="false">Mostrar Manutenção</button>
+    </div>
+
+    <table id="betoneiraTable" aria-describedby="descTabela" role="table">
+      <caption id="descTabela" class="sr-only">Tabela com betoneiras e seus status</caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Status</th>
+          <th scope="col">Último Responsável</th>
+          <th scope="col">Alterar Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Betoneiras renderizadas aqui -->
+      </tbody>
+    </table>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
