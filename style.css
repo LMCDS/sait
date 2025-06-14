@@ -1,39 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap');
 
 body {
-  margin: 0; padding: 16px;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  margin: 0;
+  padding: 16px;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
   color: #f1f5f9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 h1 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
-  color: #3b82f6;
+  color: #4C7C3C;
   margin-bottom: 24px;
   text-align: center;
-  text-shadow: 0 0 10px #3b82f6aa;
+  text-shadow: 0 0 10px #4C7C3Caa;
 }
-#loginBox, #mainContent {
+
+#loginBox,
+#mainContent {
   background: #1e293bdd;
   padding: 28px 32px;
   border-radius: 16px;
-  box-shadow: 0 0 20px #3b82f6aa;
+  box-shadow: 0 0 20px #4C7C3Caa;
   max-width: 960px;
   width: 100%;
   transition: all 0.3s ease;
 }
+
 label {
   display: block;
   margin-bottom: 6px;
   font-weight: 600;
   color: #cbd5e1;
 }
-select, input[type="password"], input[type="text"] {
+
+select,
+input[type="password"],
+input[type="text"] {
   width: 100%;
   padding: 14px 12px;
   border-radius: 10px;
@@ -44,9 +52,13 @@ select, input[type="password"], input[type="text"] {
   outline-offset: 2px;
   transition: border-color 0.3s ease;
 }
-select:focus, input[type="password"]:focus, input[type="text"]:focus {
-  border-color: #3b82f6;
+
+select:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  border-color: #4C7C3C;
 }
+
 button {
   cursor: pointer;
   border: none;
@@ -55,17 +67,20 @@ button {
   font-weight: 700;
   font-size: 17px;
   color: white;
-  background: linear-gradient(45deg, #3b82f6, #06b6d4);
-  box-shadow: 0 0 15px #06b6d4aa;
+  background: linear-gradient(45deg, #4C7C3C, #2e5228);
+  box-shadow: 0 0 15px #4C7C3Caa;
   margin-top: 10px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   user-select: none;
 }
-button:hover, button:focus {
+
+button:hover,
+button:focus {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #06b6d4ff;
+  box-shadow: 0 0 25px #4C7C3C;
   outline: none;
 }
+
 #loginError {
   color: #ef4444;
   margin-top: 12px;
@@ -74,9 +89,11 @@ button:hover, button:focus {
   text-align: center;
   text-shadow: 0 0 3px #ef4444cc;
 }
+
 .hidden {
   display: none;
 }
+
 /* Table styling */
 table {
   width: 100%;
@@ -86,46 +103,58 @@ table {
   background: #0f172a;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 20px #3b82f633;
+  box-shadow: 0 0 20px #4C7C3C33;
 }
+
 thead tr {
   background: #334155;
 }
-th, td {
+
+th,
+td {
   padding: 14px 18px;
   border-bottom: 1px solid #334155;
   color: #cbd5e1;
   text-align: center;
   user-select: none;
 }
+
 tbody tr:hover {
-  background: #3b82f633;
+  background: #4C7C3C33;
 }
-th:first-child, td:first-child {
+
+th:first-child,
+td:first-child {
   text-align: left;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 1.2px;
 }
+
+/* Status Cores */
 .status-disponível {
-  color: #22c55e;
+  color: #ffffff;
   font-weight: 700;
-  text-shadow: 0 0 6px #22c55e88;
+  text-shadow: 0 0 6px #4C7C3C88;
 }
+
 .status-alugada {
+  color: #4C7C3C;
+  font-weight: 700;
+  text-shadow: 0 0 6px #f9731688;
+}
+
+.status-manutencao {
   color: #f97316;
   font-weight: 700;
   text-shadow: 0 0 6px #f9731688;
 }
-.status-manutenção {
-  color: #eab308;
-  font-weight: 700;
-  text-shadow: 0 0 6px #eab30888;
-}
+
 .status-sucata {
   color: #ef4444;
   font-weight: 700;
   text-shadow: 0 0 6px #ef444488;
 }
+
 /* Filter buttons container */
 #filterButtons {
   margin-top: 20px;
@@ -134,17 +163,21 @@ th:first-child, td:first-child {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 #filterButtons button {
   flex: 1 1 120px;
-  background: linear-gradient(45deg, #2563eb, #3b82f6);
-  box-shadow: 0 0 10px #3b82f6aa;
+  background: linear-gradient(45deg, #4C7C3C, #2e5228);
+  box-shadow: 0 0 10px #4C7C3Caa;
   font-size: 15px;
   user-select: none;
+  transition: all 0.3s ease;
 }
+
 #filterButtons button.active {
-  background: linear-gradient(45deg, #22c55e, #14b8a6);
-  box-shadow: 0 0 15px #14b8a6ff;
+  background: linear-gradient(45deg, #4C7C3C, #3a5e32);
+  box-shadow: 0 0 15px #4C7C3Cff;
 }
+
 /* Search area */
 #searchContainer {
   display: flex;
@@ -154,6 +187,7 @@ th:first-child, td:first-child {
   margin-left: auto;
   margin-right: auto;
 }
+
 #searchInput {
   flex: 1;
   font-size: 16px;
@@ -165,44 +199,53 @@ th:first-child, td:first-child {
   outline-offset: 2px;
   transition: border-color 0.3s ease;
 }
+
 #searchInput:focus {
-  border-color: #3b82f6;
+  border-color: #4C7C3C;
 }
+
 #searchButton {
   padding: 12px 24px;
   font-weight: 700;
   border-radius: 12px;
-  background: linear-gradient(45deg, #3b82f6, #06b6d4);
+  background: linear-gradient(45deg, #4C7C3C, #2e5228);
   border: none;
   color: white;
-  box-shadow: 0 0 15px #06b6d4aa;
+  box-shadow: 0 0 15px #4C7C3Caa;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.25s ease;
   user-select: none;
 }
-#searchButton:hover, #searchButton:focus {
-  background: linear-gradient(45deg, #06b6d4, #3b82f6);
+
+#searchButton:hover,
+#searchButton:focus {
+  background: linear-gradient(45deg, #3a5e32, #4C7C3C);
   transform: scale(1.1);
   outline: none;
 }
+
 /* Logout button */
 .btn-logout {
   margin-bottom: 20px;
   background: #ef4444;
   box-shadow: 0 0 15px #ef444488;
 }
-/* Responsive */
+
+/* Responsivo */
 @media (max-width: 600px) {
-  th, td {
+  th,
+  td {
     padding: 10px 8px;
     font-size: 14px;
   }
+
   #filterButtons button {
     flex: 1 1 45%;
     font-size: 14px;
   }
 }
-/* Accessibility helper */
+
+/* Acessibilidade */
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -210,6 +253,6 @@ th:first-child, td:first-child {
   padding: 0 !important;
   margin: -1px !important;
   overflow: hidden !important;
-  clip: rect(0,0,0,0) !important;
+  clip: rect(0, 0, 0, 0) !important;
   border: 0 !important;
 }
