@@ -1,15 +1,17 @@
 const users = {
-  "Leonardo": "01121723",
+  "Leonardo01": "01121723",
   "Silvia": "Silvia123",
   "Hellen": "Hellen123",
   "Antonio": "Antonio123",
-  "Albert": "Albert123"
+  "Albert": "Albert123",
+  "Fabio": "Fabio123"
 };
 
 let betoneiras = [];
 let filtroAtual = "todas";
 let filtroTexto = "";
 
+// Gera 120 betoneiras iniciais
 function gerarBetoneiras() {
   betoneiras = [];
   for (let i = 1; i <= 120; i++) {
@@ -24,10 +26,12 @@ function gerarBetoneiras() {
   }
 }
 
+// Salva no localStorage
 function salvarBetoneiras() {
   localStorage.setItem("betoneirasData", JSON.stringify(betoneiras));
 }
 
+// Carrega do localStorage
 function carregarBetoneiras() {
   const data = localStorage.getItem("betoneirasData");
   if (data) {
@@ -38,6 +42,7 @@ function carregarBetoneiras() {
   }
 }
 
+// Login
 function login() {
   const user = document.getElementById("userSelect").value;
   const pass = document.getElementById("password").value;
@@ -55,17 +60,21 @@ function login() {
   }
 }
 
+// Logout
 function logout() {
   location.reload();
 }
 
+// Renderiza a tabela
 function renderTabela() {
   const tbody = document.querySelector("#betoneiraTable tbody");
   tbody.innerHTML = "";
 
   const listaFiltrada = betoneiras.filter(b => {
     const statusOk = filtroAtual === "todas" || b.status === filtroAtual;
-    const textoOk = b.nome.toLowerCase().includes(filtroTexto) || String(b.id).includes(filtroTexto);
+    const texto = filtroTexto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const nome = b.nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const textoOk = nome.includes(texto) || String(b.id).includes(texto);
     return statusOk && textoOk;
   });
 
@@ -129,11 +138,13 @@ function renderTabela() {
   });
 }
 
+// Filtrar por texto
 function filtrarTexto(texto) {
   filtroTexto = texto.trim().toLowerCase();
   renderTabela();
 }
 
+// Definir filtro por status
 function setFiltroStatus(status) {
   filtroAtual = status;
   document.querySelectorAll("#filterButtons button").forEach(btn => {
@@ -144,7 +155,7 @@ function setFiltroStatus(status) {
   renderTabela();
 }
 
-// Event listeners:
+// Eventos iniciais
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("searchInput").addEventListener("input", e => {
     filtrarTexto(e.target.value);
