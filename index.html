@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -10,18 +10,18 @@
   <link rel="icon" href="icon-192.png" type="image/png" />
 
   <link rel="stylesheet" href="style.css" />
-
 </head>
 <body>
   <div id="loginBox" role="region" aria-label="Área de Login">
     <h1>Login</h1>
     <label for="userSelect">Usuário</label>
     <select id="userSelect" aria-label="Selecione o usuário">
-      <option value="Leonardo">Leonardo</option>
+      <option value="Leonardo01">Leonardo</option>
       <option value="Silvia">Silvia</option>
       <option value="Hellen">Hellen</option>
       <option value="Antonio">Antonio</option>
       <option value="Albert">Albert</option>
+      <option value="Fabio">Fabio</option>
     </select>
 
     <label for="password">Senha</label>
@@ -44,6 +44,7 @@
       <button data-filter="alugada" aria-pressed="false">Mostrar Alugadas</button>
       <button data-filter="disponível" aria-pressed="false">Mostrar Disponíveis</button>
       <button data-filter="manutenção" aria-pressed="false">Mostrar Manutenção</button>
+      <button data-filter="sucata" aria-pressed="false">Sucata</button> <!-- Corrigido para funcionar -->
     </div>
 
     <table id="betoneiraTable" aria-describedby="descTabela" role="table">
@@ -66,3 +67,4 @@
   <script src="app.js"></script>
 </body>
 </html>
+
